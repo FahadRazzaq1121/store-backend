@@ -17,7 +17,7 @@ export class CreateUserDto {
   @IsString()
   contact: string;
 
-  @ApiProperty({ type: String, required: false })
+  @ApiProperty({ type: Number, required: false })
   @IsOptional()
   @IsNumber()
   age?: number
