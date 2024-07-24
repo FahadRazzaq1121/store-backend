@@ -10,13 +10,14 @@ async function bootstrap() {
 
 
   // Setup Swagger options
-  const options = new DocumentBuilder()
-    .setTitle('Your API Title')
-    .setDescription('API description')
-    .setVersion('1.0')
-    .build();
-  const document = SwaggerModule.createDocument(app, options);
-  SwaggerModule.setup('api', app, document);
+  const config = new DocumentBuilder()
+  .setTitle('NestJS API')
+  .setDescription('The NestJS API description')
+  .setVersion('1.0')
+  .addBearerAuth()
+  .build();
+const document = SwaggerModule.createDocument(app, config);
+SwaggerModule.setup('api', app, document);
   
   await app.listen(3000);
 }
